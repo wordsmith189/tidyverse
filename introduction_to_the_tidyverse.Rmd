@@ -168,7 +168,7 @@ The following verbs are all from the arch-package `dplyr`, which forms the cente
 
 ## Tidy data
 
-> Tidy datasets are easy to manipulate, model and visualise, and have a specic structure: each variable is a column, each observation is a row, and each type of observational unit is a table.
+> Tidy datasets are easy to manipulate, model and visualise, and have a special structure: each variable is a column, each observation is a row, and each type of observational unit is a table.
 
 > Hadley Wickham (2014)
 
