@@ -1,0 +1,14 @@
+---
+title: "Welcome"
+author: Lars Hinrichs
+date: 2020
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction to the tidyverse
+
+Find the slides [here](introduction_to_the_tidyverse.html).

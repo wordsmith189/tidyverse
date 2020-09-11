@@ -1,0 +1,206 @@
+---
+title: "Introduction to the tidyverse"
+author: "Lars Hinrichs"
+institute: "English Department, The University of Texas at Austin"
+date: "2020/09/07 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    css: ["xaringan-themer.css", "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"]
+    transition: faster
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      
+---
+layout: false
+---
+
+background-image: url(https://www.tidyverse.org/images/tidyverse-default.png)
+
+```{r, include=FALSE}
+options(htmltools.dir.version = FALSE,
+        cache = T)
+library(pacman)
+p_load(xaringan)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+p_load(xaringanthemer)
+style_xaringan(title_slide_background_image = "https://wallpapercave.com/wp/wp2567196.jpg",
+               background_color = "#242424",
+               title_slide_text_color = "white"
+               )
+```
+
+---
+
+# Physically, what is the tidyverse?
+
+- A meta-package that is meant to be loaded at the beginning of a work session. 
+- It actually loads a long list of dependency packages under the hood. 
+- Together, they change the state and some basic aspects of working with R. 
+
+![some tdvrs hexes](https://cdn.analyticsvidhya.com/wp-content/uploads/2019/05/ggplot_hive.jpg)
+
+---
+
+## Let's load the tidyverse
+
+```{r}
+library(tidyverse)
+```
+
+---
+class: inverse, center, middle
+
+# What changes if you load tidyverse?
+
+---
+
+# (1) Pipes
+
+package: `magrittr`
+
+![pipe](https://www.museumtv.art/wp-content/uploads/2017/08/ceci-nest-pas-une-pipe1-e1502441198132.jpg)
+
+The package name is a pun on *pipe*. (Actual title: La trahison des images; painted 1929)
+
+
+---
+
+## *Pipes* are a way of programming.
+
+
+
+Compare 
+```{r eval=F}
+order(fruitData$Juice, decreasing=TRUE)
+```
+
+
+
+to
+```{r eval = F}
+fruitData$Juice %>% order(decreasing=TRUE)
+```
+
+Both commands do exactly the same thing. 
+
+---
+
+## In the abstract:
+
+.pull-left[
+base-R:
+
+```{r eval = F}
+functionname(arg1, arg2, ...)
+```
+]
+
+.pull-right[
+tidyverse-R:
+
+```{r eval = F}
+arg1 %>% 
+  functionname(arg2, ...)
+```
+]
+
+---
+
+## Advantage of coding with pipes
+
+Code is much more legible than in base-R, e.g.
+
+```{r eval=F}
+df %>% 
+  select(1:6) %>% 
+  na.omit() %>% 
+  unique()
+```
+
+and not
+```{r eval = F}
+unique(na.omit(df[1:6,]))
+```
+
+
+Can be more easily ported,  applied to different objects.
+
+---
+
+# (2) Verbs, adverbs, nouns...
+
+objects: **'nouns'**
+
+main functions: **'verbs'**
+
+wrapper functions that help run other functions (verbs) in a certain way: **'adverbs'**
+
+---
+
+## Verbs at the heart of tidyverse
+
+The following verbs are all from the arch-package `dplyr`, which forms the center of the tidyverse.
+
+
+`select()`
+
+
+`filter()`
+
+
+`summarise()`
+
+
+`count()`
+
+
+`arrange()`
+
+---
+
+# (3) The 'tidy' aspect
+
+## Tidy data
+
+> Tidy datasets are easy to manipulate, model and visualise, and have a specic structure: each variable is a column, each observation is a row, and each type of observational unit is a table.
+
+> Hadley Wickham (2014)
+
+---
+
+## An untidy dataset
+
+```{r echo=FALSE}
+cars <- c("audi a4", "golf gti", "new beetle", "audi a8")
+buyers_gender <- c("male")
+gender_percent <- c(50, 80, 40, 60)
+avg_hp <- c(120, 140, 90, 190)
+dat <- data.frame(cars, buyers_gender, gender_percent, avg_hp)
+dat %>% knitr::kable()
+```
+
+---
+
+## A tidy dataset
+
+```{r echo=FALSE}
+cars <- c("a4", "a8", "a8", "a4", "a4",
+          "golf", "golf")
+make <- c("audi", "audi", "audi", "audi", "audi",
+          "vw", "vw")
+model_suffix <- c(
+  "avant g-tron", "allroad quattro", NA, "limousine", NA,
+  "gti", "gte")
+buyers_gender <- c("female", NA, "female", "male", NA, "male", "female")
+hp <- c(120, 140, 90, 190, 140, 140, 90)
+dat <- data.frame(cars, make, model_suffix, buyers_gender, hp)
+dat %>% knitr::kable()
+```
+
+
+
