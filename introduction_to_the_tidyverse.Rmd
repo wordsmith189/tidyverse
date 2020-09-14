@@ -1,8 +1,9 @@
 ---
 title: "Introduction to the tidyverse"
+subtitle: "E 310D Intro to Digital Studies"
 author: "Lars Hinrichs"
-institute: "English Department, The University of Texas at Austin"
-date: "2020/09/07 (updated: `r Sys.Date()`)"
+institute: "English Department, UT Austin"
+date: "updated: `r Sys.Date()`"
 output:
   xaringan::moon_reader:
     css: ["xaringan-themer.css", "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"]
@@ -14,9 +15,9 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       
+
 ---
-layout: false
----
+class: hide_logo
 
 background-image: url(https://www.tidyverse.org/images/tidyverse-default.png)
 
@@ -34,6 +35,15 @@ style_xaringan(title_slide_background_image = "https://wallpapercave.com/wp/wp25
                title_slide_text_color = "white"
                )
 ```
+
+```{r xaringan-logo, echo=FALSE}
+
+xaringanExtra::use_logo(
+  image_url = "images/logo_E310D_small.png", height = "60px"
+)
+
+```
+
 
 ---
 
@@ -56,7 +66,7 @@ library(tidyverse)
 ---
 class: inverse, center, middle
 
-# What changes if you load tidyverse?
+# What changes when you load tidyverse?
 
 ---
 
@@ -168,9 +178,17 @@ The following verbs are all from the arch-package `dplyr`, which forms the cente
 
 ## Tidy data
 
-> Tidy datasets are easy to manipulate, model and visualise, and have a special structure: each variable is a column, each observation is a row, and each type of observational unit is a table.
+```{r xaringan-tachyons, echo=FALSE}
+xaringanExtra::use_tachyons()
+```
+.bg-washed-green.b--dark-green.ba.bw2.br3.shadow-5.ph4.mt5[
+Tidy datasets are easy to manipulate, model and visualise, and have a special structure: each variable is a column, each observation is a row, and each type of observational unit is a table.
 
-> Hadley Wickham (2014)
+.tr[
+— Hadley Wickham
+]]
+
+
 
 ---
 
