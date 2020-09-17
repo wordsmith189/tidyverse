@@ -17,9 +17,8 @@ output:
       
 
 ---
-class: hide_logo
+class: inverse, middle, center
 
-background-image: url(https://www.tidyverse.org/images/tidyverse-default.png)
 
 ```{r, include=FALSE}
 options(htmltools.dir.version = FALSE,
@@ -48,6 +47,48 @@ xaringanExtra::use_logo(
 
 ```
 
+
+
+# Working with R == objects + functions
+
+---
+
+class: middle
+
+**objects** - things that can be stored in variables, our data, the thing we are interested in
+
+**functions** - the tools we apply to our objects in order to find things out about them 
+
+---
+
+## Some of the functions we already know
+
+```{r eval=F}
+sum()
+class()
+c()
+as.numeric()
+paste()
+colnames()
+rownames()
+```
+
+---
+## How functions function
+
+```{r eval=F}
+functionname(arg1, arg2, arg3, ...)
+```
+
+*Technically*, all arguments are optional.
+
+*Typically*, there is at minimum an arg1, and it is the main one: it is the "object" of the action performed by the function.
+
+---
+
+class: hide_logo
+
+background-image: url(https://www.tidyverse.org/images/tidyverse-default.png)
 
 ---
 
@@ -225,5 +266,108 @@ dat <- data.frame(cars, make, model_suffix, buyers_gender, hp)
 dat %>% knitr::kable()
 ```
 
+---
+class: inverse, middle, center
 
+# Example:<br>translate to tidyverse
+
+From Hadley Wickham, *R for Data Science*, [chapter 18](https://r4ds.had.co.nz/pipes.html)
+
+---
+class: middle
+
+## Let's work with literature 
+
+<blockquote>
+Little bunny Foo Foo<br>
+Went hopping through the forest<br>
+Scooping up the field mice<br>
+And bopping them on the head
+</blockquote>
+---
+class: middle
+
+We’ll start by defining an object to represent little bunny Foo Foo:
+
+```{r eval=F}
+foo_foo <- little_bunny()
+```
+
+---
+class: middle
+
+And we’ll use a function for each key verb: 
+
+`hop()`, `scoop()`, and `bop()`. 
+
+---
+class: middle
+
+
+Using this object and these verbs, there are (at least) four ways we could retell the story in code:
+
+1. Save each intermediate step as a new object.
+1. Overwrite the original object many times.
+1. Compose functions.
+1. Use the pipe.
+
+---
+class: middle
+
+### Option 1
+
+The simplest approach is to save each step as a new object:
+
+```{r eval=F}
+foo_foo_1 <- hop(foo_foo, through = forest)
+foo_foo_2 <- scoop(foo_foo_1, up = field_mice)
+foo_foo_3 <- bop(foo_foo_2, on = head)
+```
+
+---
+class: middle
+
+### Option 2
+
+Instead of creating intermediate objects at each step, we could overwrite the original object:
+
+```{r eval=F}
+foo_foo <- hop(foo_foo, through = forest)
+foo_foo <- scoop(foo_foo, up = field_mice)
+foo_foo <- bop(foo_foo, on = head)
+```
+
+---
+class: middle
+
+### Option 3
+
+Another approach is to abandon assignment and just string the function calls together:
+
+```{r eval=F}
+bop(
+  scoop(
+    hop(foo_foo, through = forest),
+    up = field_mice
+  ), 
+  on = head
+)
+```
+
+---
+class: middle
+
+### Option 4
+
+Finally, we can use the pipe:
+
+```{r eval=F}
+foo_foo %>%
+  hop(through = forest) %>%
+  scoop(up = field_mice) %>%
+  bop(on = head)
+```
+---
+
+---
 
