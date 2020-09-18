@@ -10,6 +10,15 @@
     <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <script src="libs/jquery/jquery.min.js"></script>
+    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+    <script src="libs/bootbox/bootbox.min.js"></script>
+    <script src="libs/idb-keyvalue/idb-keyval-iife-compat.min.js"></script>
+    <link href="libs/tutorial/tutorial.css" rel="stylesheet" />
+    <script src="libs/tutorial/tutorial.js"></script>
+    <script src="libs/tutorial-autocompletion/tutorial-autocompletion.js"></script>
+    <script src="libs/tutorial-diagnostics/tutorial-diagnostics.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" type="text/css" />
   </head>
@@ -21,7 +30,7 @@ class: center, middle, inverse, title-slide
 ## E 310D Intro to Digital Studies
 ### Lars Hinrichs
 ### English Department, UT Austin
-### updated: 2020-09-17
+### updated: 2020-09-18
 
 ---
 
@@ -396,9 +405,84 @@ foo_foo %&gt;%
   scoop(up = field_mice) %&gt;%
   bop(on = head)
 ```
----
 
 ---
+
+## What happens after the pipeline?
+
+This bit of code (same as above) takes the object `foo_foo`, processes it through the pipeline, and the result... is printed to the console. 
+
+
+```r
+foo_foo %&gt;%
+  hop(through = forest) %&gt;%
+  scoop(up = field_mice) %&gt;%
+  bop(on = head)
+```
+
+--
+
+After that, the object is pretty much lost. We can't do anything further with it, because we have neither written it to a variable nor saved it to a file. 
+
+--
+
+If we wanted to retain the result as an object, we could either (a) assign it to a new variable name or (b) *overwrite* the object we started with.
+
+.pull-left[
+### a
+
+```r
+my_new_variable &lt;- foo_foo %&gt;%
+  hop(through = forest) %&gt;%
+  scoop(up = field_mice) %&gt;%
+  bop(on = head)
+```
+]
+
+.pull-right[
+### b
+
+```r
+foo_foo &lt;- foo_foo %&gt;%
+  hop(through = forest) %&gt;%
+  scoop(up = field_mice) %&gt;%
+  bop(on = head)
+```
+]
+
+---
+class: inverse, middle, center
+
+Let's practice
+
+---
+
+```
+## Installing package into '/Users/lh9896/Library/R/4.0/library'
+## (as 'lib' is unspecified)
+```
+
+```
+## 
+## The downloaded binary packages are in
+## 	/var/folders/y0/8scfkwpj73g5xzfptnsqq9nxr135jt/T//RtmpJjCoxU/downloaded_packages
+```
+
+```
+## 
+## learnr installed
+```
+
+```
+## Warning: package 'learnr' was built under R version 4.0.2
+```
+
+```
+## Warning in pacman::p_load(learnr): Failed to install/load:
+## learnr
+```
+
+&lt;iframe src="link-to-app?showcase=0" width="100%" height="400px"&gt;&lt;/iframe&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

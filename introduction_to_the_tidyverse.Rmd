@@ -367,7 +367,56 @@ foo_foo %>%
   scoop(up = field_mice) %>%
   bop(on = head)
 ```
----
 
 ---
+
+## What happens after the pipeline?
+
+This bit of code (same as above) takes the object `foo_foo`, processes it through the pipeline, and the result... is printed to the console. 
+
+```{r eval=F}
+foo_foo %>%
+  hop(through = forest) %>%
+  scoop(up = field_mice) %>%
+  bop(on = head)
+```
+
+--
+
+After that, the object is pretty much lost. We can't do anything further with it, because we have neither written it to a variable nor saved it to a file. 
+
+--
+
+If we wanted to retain the result as an object, we could either (a) assign it to a new variable name or (b) *overwrite* the object we started with.
+
+.pull-left[
+### a
+```{r eval=F}
+my_new_variable <- foo_foo %>%
+  hop(through = forest) %>%
+  scoop(up = field_mice) %>%
+  bop(on = head)
+```
+]
+
+.pull-right[
+### b
+```{r eval=F}
+foo_foo <- foo_foo %>%
+  hop(through = forest) %>%
+  scoop(up = field_mice) %>%
+  bop(on = head)
+```
+]
+
+---
+class: inverse, middle, center
+
+# Let's practice
+
+---
+```{r echo=F}
+pacman::p_load(learnr)
+knitr::include_app("link-to-app")
+```
 
