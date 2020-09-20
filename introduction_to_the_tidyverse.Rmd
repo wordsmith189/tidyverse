@@ -416,7 +416,7 @@ class: inverse, middle, center
 
 ---
 
-<iframe src=""https://wordsmith189.shinyapps.io/PracticePipes/" width="90%" height="90%"></iframe>
+<iframe src="https://wordsmith189.shinyapps.io/PracticePipes/" width="90%" height="90%"></iframe>
 
 ---
 
