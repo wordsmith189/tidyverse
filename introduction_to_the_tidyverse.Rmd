@@ -415,8 +415,9 @@ class: inverse, middle, center
 # Let's practice
 
 ---
-```{r echo=F}
-pacman::p_load(learnr)
-knitr::include_app("link-to-app")
-```
+
+<iframe src=""https://wordsmith189.shinyapps.io/PracticePipes/" width="90%" height="90%"></iframe>
+
+---
+
 
