@@ -32,6 +32,9 @@ p_load(xaringan)
 
 ```{r xaringanExtra-share-again-animate, echo=FALSE}
 xaringanExtra::use_share_again()
+xaringanExtra::style_share_again(
+  share_buttons = "none"
+)
 xaringanExtra::use_animate_all("fade")
 ```
 
