@@ -15,6 +15,9 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       
+---
+class: middle
+layout: true
 
 ---
 class: inverse, middle, center
@@ -27,8 +30,9 @@ library(pacman)
 p_load(xaringan)
 ```
 
-```{r xaringanExtra-share-again, echo=FALSE}
+```{r xaringanExtra-share-again-animate, echo=FALSE}
 xaringanExtra::use_share_again()
+xaringanExtra::use_animate_all("fade")
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
@@ -85,7 +89,6 @@ functionname(arg1, arg2, arg3, ...)
 *Typically*, there is at minimum an arg1, and it is the main one: it is the "object" of the action performed by the function.
 
 ---
-
 class: hide_logo
 
 background-image: url(https://www.tidyverse.org/images/tidyverse-default.png)
