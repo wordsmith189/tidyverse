@@ -30,13 +30,7 @@ library(pacman)
 p_load(xaringan)
 ```
 
-```{r xaringanExtra-share-again-animate, echo=FALSE, eval=FALSE}
-xaringanExtra::use_share_again()
-xaringanExtra::style_share_again(
-  share_buttons = "none"
-)
-xaringanExtra::use_animate_all("fade")
-```
+
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 p_load(xaringanthemer)
