@@ -48,7 +48,7 @@ style_xaringan(title_slide_background_image = "https://wallpapercave.com/wp/wp25
 
 ```{r xaringan-logo, echo=FALSE}
 xaringanExtra::use_logo(
-  image_url = "images/DTA logo.png", height = "70px"
+  image_url = "images/DTA_logo.png", height = "70px"
 )
 ```
 
