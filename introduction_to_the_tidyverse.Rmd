@@ -1,6 +1,6 @@
 ---
 title: "Introduction to the tidyverse"
-subtitle: "E/LIN 323L English as a World Language"
+subtitle: "Class: Digital Text Analysis"
 author: "Lars Hinrichs"
 institute: "English Department, UT Austin"
 date: "updated: `r Sys.Date()`"
@@ -48,7 +48,7 @@ style_xaringan(title_slide_background_image = "https://wallpapercave.com/wp/wp25
 
 ```{r xaringan-logo, echo=FALSE}
 xaringanExtra::use_logo(
-  image_url = "images/E_LIN_323L.png", height = "70px"
+  image_url = "images/DTA logo.png", height = "70px"
 )
 ```
 
