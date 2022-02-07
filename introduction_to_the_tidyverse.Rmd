@@ -50,7 +50,9 @@ xaringanExtra::use_logo(
 xaringanExtra::use_tile_view()
 ```
 
-
+```{r xaringan-slide-tone, echo=FALSE}
+xaringanExtra::use_slide_tone()
+```
 
 
 # Working with R == objects + functions
