@@ -46,6 +46,11 @@ xaringanExtra::use_logo(
 )
 ```
 
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+```
+
+
 
 
 # Working with R == objects + functions
